@@ -1,0 +1,59 @@
+.username_input{
+     height: 100%;
+     background: transparent;
+     border: #28afe0 2px solid;
+     outline: none;
+     color: #525252;
+     font-size: 16px;
+     margin: 10px;
+     padding: 2px;
+}
+
+button{
+    display: inline-block;
+    height: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: whitesmoke;
+    box-shadow: 0px 2px 3px 0 rgba(0, 0, 0, 0.35), inset 1px 1.7px 0 0 #77dbff;
+    border: solid 1px #116689;
+    background-image: linear-gradient(to bottom, #28afe0, #0281b0);
+    border-radius: 3px;
+    margin: 10px;
+}
+
+.edit_button{
+    box-shadow: 0px 2px 3px 0 rgba(0, 0, 0, 0.35), inset 1px 1.7px 0 0 #6198e1;
+    border: solid 1px #2b4a79;
+    background-image: linear-gradient(to top, #254166, #4271af);
+}
+
+.delete_button{
+    box-shadow: 0px 2px 3px 0 rgba(0, 0, 0, 0.35), inset 1px 1.7px 0 0 #fbc489;
+    border: solid 1px #b13a00;
+    background-image: linear-gradient(to bottom, #f55719, #da3208);
+}
+
+.users_list{
+    display: inline-block;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #525252;
+    box-shadow: 5px 2px 3px 0 rgba(0, 0, 0, 0.35), inset 1px 1.7px 0 0 #6b5843;
+    padding:10px;
+}
+
+
+.users_list li{
+    border: #28afe0 2px solid;
+    font-size: 20px;
+    font-weight: normal;
+    padding-left: 5px;
+    margin:5px;
+}
+
+.username{
+    display: inline-block;
+    min-width: 150px;
+}
