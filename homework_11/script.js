@@ -63,29 +63,24 @@ wrapper1.addEventListener("click",function(event){
 
 for(let i=0;i<5;i++){
     let square=createSquare();
+    square.style.backgroundColor="blue";
     wrapper2.appendChild(square);
+}
+
+function getNewColor(color,array){
+    for(let i=0;i<array.length-1;i++){
+        if(color===array[i]){
+            return array[i+1];
+        }
+    }
+    return array[0];
+
 }
 wrapper2.addEventListener("click", function (event) {
     if(event.target.className!=="square"){
         return;
     }
-    bgColor=event.target.style.backgroundColor;
-        switch(bgColor){
-            case "blue": {
-                bgColor="green";
-                break;
-            }
-            case "green": {
-                bgColor="yellow";
-                break;
-            }
-            case "yellow": {
-                bgColor="transparent"
-                break;
-            }
-            default: bgColor="blue";
-        }
-    event.target.style.backgroundColor = bgColor;
+    event.target.style.backgroundColor = getNewColor(event.target.style.backgroundColor,["blue","green","yellow"]);
 })
 
 
