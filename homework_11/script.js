@@ -23,7 +23,6 @@ function addButton(btn) {
     button.className=btn.name;
     button.type=btn.type;
     button.innerText=btn.text;
-    button.addEventListener(btn.event, btn.action);
     return button;
 }
 
@@ -34,50 +33,59 @@ for(let i=0;i<5;i++){
         name:"add_button",
         type:"submit",
         text:"+",
-        event:"click",
-        action: function() {
-            const text = this.parentNode.querySelector("span");
-            const value = Number(text.innerText);
-            text.innerText=value+1;
-        }
     }));
     square.appendChild(addButton({
         name:"deduct_button",
         type:"submit",
         text:"-",
-        event:"click",
-        action: function() {
-            const text = this.parentNode.querySelector("span");
-            const value = Number(text.innerText);
-            text.innerText=value-1;
-        }
     }));
     wrapper1.appendChild(square);  
 }
 
+wrapper1.addEventListener("click",function(event){
+    if(event.target.tagName!=="BUTTON"){
+        return;
+    }
+    const text = event.target.closest(".square").querySelector("span");
+    const value = Number(text.innerText);
+    switch(event.target.innerText){
+        case "+": {
+            text.innerText=value+1;
+            break;
+        }
+        case "-": {
+            text.innerText=value-1;
+            break;
+        }
+    }
+
+})
 
 for(let i=0;i<5;i++){
     let square=createSquare();
     wrapper2.appendChild(square);
-    square.addEventListener("click", function () {
-        bgColor=square.style.backgroundColor;
+}
+wrapper2.addEventListener("click", function (event) {
+    if(event.target.className!=="square"){
+        return;
+    }
+    bgColor=event.target.style.backgroundColor;
         switch(bgColor){
             case "blue": {
-                bgColor = "green";
+                bgColor="green";
                 break;
             }
             case "green": {
-                bgColor = "yellow";
+                bgColor="yellow";
                 break;
             }
             case "yellow": {
-                bgColor = "transparent"
+                bgColor="transparent"
                 break;
             }
-            default: bgColor = "blue";
+            default: bgColor="blue";
         }
-        square.style.backgroundColor = bgColor;
-    })
-}
+    event.target.style.backgroundColor = bgColor;
+})
 
 
