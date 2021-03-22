@@ -1,0 +1,36 @@
+.wrapper{
+    display:flex;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    border: black 1px solid;
+    display: block;
+    text-align: center;
+    margin:20px;
+}
+
+.square span{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    display:block;
+    padding-top:25px;
+}
+
+
+.add_button,
+.deduct_button{
+    margin-top:10px;
+    width:40px;
+
+}
+
+.add_button{
+    float:left;
+}
+
+.deduct_button{
+    float:right;
+}
