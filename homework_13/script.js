@@ -67,18 +67,6 @@ Army.prototype.cloneUnit = function(index){
     if(this.units.length>index) return this.units[index].clone();
 }
 
-function Animal(sex) {
-    this.sex = sex;
-}
-
-Animal.prototype.run = function(){
-    console.log(`${this.name} is running`);
-}
-
-Animal.prototype.run = function(){
-    console.log(`${this.name} is running`);
-}
-
 const animal = {
     name: "Animal",
     sex: "male",
