@@ -18,10 +18,10 @@ function showTimeConsole(interval){
 }
 
 function createElements(string,parent){
-    colors = ["#B0D0D3","#C08497","#0A1045","#F7AF9D","#F7E3AF","#0A1045","#F3EEC3","#324376"];
+    colors = ["#C08497","#F7AF9D","#F7E3AF","#0A1045","#F3EEC3","#324376"];
     for(let i=0; i<string.length; i++){
         const container = document.createElement("div");
-        container.style.color = colors[i];
+        container.style.color = colors[colors.length % i];
         parent.appendChild(container);
     }
 }

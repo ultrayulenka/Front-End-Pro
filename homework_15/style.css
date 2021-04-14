@@ -1,0 +1,10 @@
+.wrapper div{
+    display: inline;
+    font-size: 80px;
+    font-style: bold;
+}
+.wrapper{
+    width: 600px;
+    margin: auto;
+}
+
