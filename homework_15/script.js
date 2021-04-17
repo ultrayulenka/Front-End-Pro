@@ -85,7 +85,7 @@ function getShortTime(divider){
 }
 
 function getTime(divider){
-    divider = divider? divider: ":";
+    divider = divider !== undefined? divider: ":";
     const date = new Date();
     const time = {};
     time.hours = date.getHours();
@@ -98,8 +98,8 @@ function getTime(divider){
 }
 
 function getLongTime(timeDivider,dateDivider){
-    dateDivider = dateDivider? dateDivider: "/";
-    timeDivider = timeDivider? timeDivider: ":";
+    dateDivider = dateDivider !== undefined? dateDivider: "/";
+    timeDivider = timeDivider !== undefined? timeDivider: ":";
     const date = new Date();
     const time = {};
     time.day = date.getDate();
@@ -116,14 +116,14 @@ function getLongTime(timeDivider,dateDivider){
 function showTimeConsole(interval,timeFunction){
     return setInterval(function(){
         console.clear();
-        console.log(timeFunction());
+        console.log(timeFunction(":","-"));
     },interval);
 }
 
 function showTimeScreen(interval,timeFunction,parent){
     return setInterval(function(){
         let containers = parent.children;
-        const time = timeFunction();
+        const time = timeFunction(":","-");
         if(time.length>containers.length){
             addElements(time.length-containers.length,parent);
         } else if(time.length<containers.length){
