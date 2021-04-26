@@ -1,5 +1,3 @@
-const MAX_PAGES = 34;
-
 class Button {
     #button;
     #defaultText;
@@ -93,12 +91,7 @@ class CharactersLoader {
         this.#pageCounter = 0;
         this.#button = new Button("button","submit","Get data",()=>{
             this.#pageCounter++;
-            if(this.#pageCounter<=34){
-                this.getData();
-            } else {
-                this.#button.disableButton("No more data");
-                alert("You have reached the last page!");
-            }
+            this.getData();
         });
         this.#list = new List("characters-list");
         this.#title = document.createElement("span");
@@ -123,7 +116,12 @@ class CharactersLoader {
             }
             this.addCharactes(xhr.response);
             this.updateTitle();
+            if(xhr.response.info.pages === this.#pageCounter){
+                this.#button.disableButton("No more data");
+                return;
+            }
             this.#button.unableButton();
+            
         }
 
         xhr.onerror = function(){
