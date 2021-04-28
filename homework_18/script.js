@@ -147,7 +147,7 @@ class CharactersLoader {
     getData(){
         this.#list.clearList();
         this.#button.disableButton("Getting data...");
-        this.#pageNumber = this.#selectList.getSelectedIndex() + 61;
+        this.#pageNumber = this.#selectList.getSelectedIndex() + 1;
         const url = `https://rickandmortyapi.com/api/character/?page=${this.#pageNumber}`;
         fetch(url)
             .then(response => {
