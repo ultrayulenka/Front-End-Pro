@@ -147,20 +147,23 @@ class CharactersLoader {
     getData(){
         this.#list.clearList();
         this.#button.disableButton("Getting data...");
-        this.#pageNumber = this.#selectList.getSelectedIndex() + 1;
+        this.#pageNumber = this.#selectList.getSelectedIndex() + 61;
         const url = `https://rickandmortyapi.com/api/character/?page=${this.#pageNumber}`;
         fetch(url)
-            .then(result => {
-                if(result.ok){
-                    return result.json();
+            .then(response => {
+                if(response.ok){
+                    return response.json();
                 }
-                throw new Error(`Something went wrong! Status ${result.statusText}`);
+                throw new Error(`Something went wrong! Status ${response.status}`);
             })
             .then(data => {
                 this.addCharactes(data);
                 this.#button.enableButton();
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                console.error(error);
+                this.#button.enableButton();
+            })
     }
 
  
