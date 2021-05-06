@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container{
+    width: 450px;
+    /*max-height: 70vh;*/
+    /*min-height: 50vh;*/
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    background-color: whitesmoke;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header{
+    background-color: skyblue;
+    color: whitesmoke;
+    text-transform: uppercase;
+    padding: 10px 0 10px 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header h1{
+    font-size: 16px;
+    margin-top: 5px;
+
+}
+
+.header h2{
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.avatar{
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar img{
+    width: 100%;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    min-height: 40vh;
+}
+
+.chat-box{
+    padding: 20px 15px;
+    max-height: 40vh;
+    overflow: scroll;
+}
+
+
+
+.message-text {
+    padding: 5px 10px 5px 10px; 
+    color: white;
+    border-radius: 10%;
+}
+.message{
+    width: fit-content;
+    margin-bottom: 5px;
+}
+
+.message span{
+    display: block;
+}
+.message .message-timestamp{
+    font-size: 10px;
+    font-weight: lighter;
+    color: silver;
+    display: block;
+    padding: 2px;
+}
+
+
+.bot-message .message-text {
+    background-color: skyblue;
+}
+
+.bot-message .message-timestamp{
+    text-align: right;
+}
+
+.user-message .message-text {
+    background-color: thistle;
+}
+
+.user-message {
+    margin-left: auto;
+}
+
+.message-box {
+    display: flex;
+}
+
+.message-input{
+    flex: 1;
+    height: 40px;
+    color: rgb(179, 174, 174);
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-top: 10px;
+    min-height: 20px;
+    max-height: 150px;
+    resize: vertical;
+    background-color:white
+}
+
+.message-input::placeholder{
+    color: rgb(179, 174, 174);
+}
+
+.message-submit{ 
+    border: none;
+    font-size: 16px;
+    color: white;
+    min-width: 80px;
+    text-transform: uppercase;
+    background-color: thistle;
+    font-weight: bold;
+}
+
+.message-submit:hover{
+    background-color: rgb(204, 169, 204);
+    transition: 0.2s ease;
+}
+
+
+
